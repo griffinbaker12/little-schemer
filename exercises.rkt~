@@ -131,52 +131,23 @@
 (multiinsertL `e `d lst-multiple)
 
 (define multisubst
-  (lambda (new old lat)
-    (cond
-      ((null? lat) `())
-      ((eq? (car lat) old) (cons new (multisubst new old (cdr lat))))
-      (else (cons (car lat) (multisubst new old (cdr lat)))))))
 
-(multisubst `e `d lst-multiple)
 
-(define add1
-  (lambda (n)
-    (+ n 1)))
 
-(add1 10)
 
-(define sub1
-  (lambda (n)
-    (- n 1)))
 
-(sub1 (add1 10))
 
-(zero? 0)
 
-(define +o
-  (lambda (n m)
-    (cond
-      ((zero? m) n)
-      (else (add1 (+o n (sub1 m)))))))
 
-(+o 46 12)
+
+
+
+
+
   
-(define -o
-  (lambda (n m)
-    (cond
-      ((zero? m) n)
-      (else (sub1 (-o n (sub1 m)))))))
 
-(-o 46 12)
 
-(define addtup
-  (lambda (tup)
-    (cond
-      ((null? tup) 0)
-      (else (+ (car tup) (addtup (cdr tup)))))))
 
-(define tup `(1 2 3 4 5))
-(addtup tup)
 
 
 
